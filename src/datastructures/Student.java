@@ -14,11 +14,15 @@ public class Student {
     private String id;
     private String gender;
     private double grade;
+    
     Student(){
         
     }
     Student(String name, String id, String gender, double grade){
-        
+        this.name=name;
+        this.id = id;
+        this.gender = gender;
+        this.grade = grade;
     }
 
     public String getName() {
@@ -52,11 +56,24 @@ public class Student {
     public void setGrade(double grade) {
         this.grade = grade;
     }
-    public boolean equals(){
-    
+    @Override
+    public boolean equals(Object obj){
+        if (obj instanceof Student){
+            Student objS = (Student) obj;
+                if(objS.getName().equals(name)){
+                    if(objS.getId().equals(id)){
+                        if(objS.getGender().equals(gender)){
+                            if(objS.getGrade() == grade){
+                                return true;
+                            }
+                        }
+                    }
+                }
+        }
         return false;
     }
+    @Override
     public String toString(){
-        return " ";
+        return "{ \"name\" : \""+name+"\", \"id\" : \""+id+"\" , \"gender\" : \""+gender+"\", \"grade\" : \""+grade+"\"}";
     }
 }
