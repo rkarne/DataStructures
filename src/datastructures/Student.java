@@ -7,7 +7,7 @@ package datastructures;
 
 /**
  *
- * @author rkarne
+ * @author aman
  */
 public class Student {
     private String name;
@@ -16,7 +16,10 @@ public class Student {
     private double grade;
     
     Student(){
-        
+        this.name="";
+        this.id="";
+        this.gender="";
+        this.grade=0.0;
     }
     Student(String name, String id, String gender, double grade){
         this.name=name;
