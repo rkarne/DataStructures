@@ -7,7 +7,7 @@ package datastructures;
 
 /**
  *
- * @author aman
+ * @author rkarne
  */
 public class Student {
     private String name;

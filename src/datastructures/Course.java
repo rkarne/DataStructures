@@ -7,6 +7,8 @@ package datastructures;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -57,12 +59,16 @@ public class Course {
     }
     @Override
     public String toString(){
+        return "";
+         }
+    
+    public Set<Student> getAllByGender(){
         
-        String[] stockArr = new String[students.size()];
-        stockArr = students.toArray(stockArr);
-        for(String s : stockArr)
-         return "";
+        return null;
+    }
+    
+    public Map<Student,Set<String>> getGradeMap(){
         return null;
         
-         }
+    }
 }
