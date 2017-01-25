@@ -6,6 +6,8 @@
 package datastructures;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,6 +19,7 @@ import java.util.Set;
 public class Course {
     
     private List<Student> students = new ArrayList<>(); 
+    Student student = new Student();
     
     Course(){
       this.students = null;
@@ -59,7 +62,7 @@ public class Course {
     }
     @Override
     public String toString(){
-        return "";
+        return student.toString();
          }
     
     public Set<Student> getAllByGender(){
@@ -67,8 +70,35 @@ public class Course {
         return null;
     }
     
-    public Map<Student,Set<String>> getGradeMap(){
-        return null;
+    public Map<String,Set<String>> getGradeMap(){
+        
+        Map<String,Set<String>> s = new HashMap<>();
+        
+        Set<String> studentA = new HashSet<>();
+        Set<String> studentB = new HashSet<>();
+        Set<String> studentC = new HashSet<>();
+        Set<String> studentD = new HashSet<>();
+        
+        for(int i =0; i< students.size(); i++){
+            if(students.get(i).getGrade()> 94.0 && students.get(i).getGrade()<100.0 ){
+                studentA.add(student.getName());
+            }
+            else if(students.get(i).getGrade()> 85.0 && students.get(i).getGrade()<94.0 ){
+                studentB.add(student.getName());
+            }
+            else if(students.get(i).getGrade()> 75 && students.get(i).getGrade()<85 ){
+                studentC.add(student.getName());
+            }
+            else if(students.get(i).getGrade()> 60.0 && students.get(i).getGrade()<75.0 ){
+                studentD.add(student.getName());
+            }
+        }
+        s.put("A", studentA);
+        s.put("B", studentB);
+        s.put("C", studentC);
+        s.put("D", studentD);
+        
+        return s;
         
     }
 }

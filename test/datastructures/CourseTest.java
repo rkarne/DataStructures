@@ -159,8 +159,8 @@ public class CourseTest {
     public void testGetGradeMap() {
         System.out.println("getGradeMap");
         Course instance = new Course();
-        Map<Student, Set<String>> expResult = null;
-        Map<Student, Set<String>> result = instance.getGradeMap();
+        Map<String, Set<String>> expResult = null;
+        Map<String, Set<String>> result = instance.getGradeMap();
         assertEquals(expResult, result);
        
     }
