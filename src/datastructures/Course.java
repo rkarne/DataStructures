@@ -54,7 +54,6 @@ public class Course {
         if (obj instanceof Course){
             Course objC = (Course) obj;
                 if(objC.getAll().equals(students)){
-                  
                                 return true;
                             }
                 }
@@ -62,7 +61,8 @@ public class Course {
     }
     @Override
     public String toString(){
-        return student.toString();
+      
+        return students.toString();
          }
     
     public Set<String> getAllByGender(String gender){

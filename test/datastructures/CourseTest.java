@@ -6,6 +6,8 @@
 package datastructures;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -131,8 +133,8 @@ public class CourseTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Course instance = new Course();
-        String expResult = "";
+        Student instance = new Student("sim", "101", "male", 12.0);
+        String expResult = "{ \"name\" : \"sim\", \"id\" : \"101\" , \"gender\" : \"male\", \"grade\" : \"12.0\"}";
         String result = instance.toString();
         assertEquals(expResult, result);
        
@@ -144,8 +146,11 @@ public class CourseTest {
     @Test
     public void testGetAllByGender() {
         System.out.println("getAllByGender");
-        Course instance = new Course();
-        Set<String> expResult = null;
+        List<Student> ls = new ArrayList<>();
+        
+        Course instance = new Course(ls);
+        Set <String> s = new HashSet<>();
+        Set<String> expResult = s;
         Set<String> result = instance.getAllByGender("male");
         assertEquals(expResult, result);
         
@@ -157,11 +162,29 @@ public class CourseTest {
     @Test
     public void testGetGradeMap() {
         System.out.println("getGradeMap");
-        Course instance = new Course();
-        Map<String, Set<String>> expResult = null;
+        List <Student> ls = new ArrayList<>();
+        Course instance = new Course(ls);
+        Set<String> sdemo;
+        sdemo = new HashSet<>();
+        Map<String, Set<String>> s = new HashMap<>();
+        s.put("A", (Set<String>) sdemo);
+        s.put("B", (Set<String>) sdemo);
+        s.put("C", (Set<String>) sdemo);
+        s.put("D", (Set<String>) sdemo);
+        Map<String, Set<String>> expResult = s;
         Map<String, Set<String>> result = instance.getGradeMap();
         assertEquals(expResult, result);
-       
+    }
+    
+     @Test
+    public void testGetAllnoarugment() {
+        System.out.println("getAll");
+        Course instance = new Course();
+        List<Student> student = new ArrayList<>();
+        Course cs = new Course(student);
+        List<Student> expResult = null;
+        List<Student> result = instance.getAll();
+        assertEquals(expResult, result);
     }
     
 }
