@@ -50,7 +50,6 @@ public class CourseTest {
         Object student = null;
         List<Student> ls = new ArrayList<>();
         Student s = new Student();
-        
         Course instance = new Course(ls);
         instance.add(s);
         
@@ -146,8 +145,8 @@ public class CourseTest {
     public void testGetAllByGender() {
         System.out.println("getAllByGender");
         Course instance = new Course();
-        Set<Student> expResult = null;
-        Set<Student> result = instance.getAllByGender();
+        Set<String> expResult = null;
+        Set<String> result = instance.getAllByGender("male");
         assertEquals(expResult, result);
         
     }

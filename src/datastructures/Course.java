@@ -65,9 +65,20 @@ public class Course {
         return student.toString();
          }
     
-    public Set<Student> getAllByGender(){
+    public Set<String> getAllByGender(String gender){
         
-        return null;
+        Set<String> studentF = new HashSet<>();
+        Set<String> studentM = new HashSet<>();
+        if(gender == "female" || gender == "Female" || gender == "FEMALE"){
+            studentF.add(student.getGender());
+            return studentF;
+        }
+        else{
+            studentM.add(student.getGender());
+            return studentM;
+        }
+      
+        
     }
     
     public Map<String,Set<String>> getGradeMap(){
@@ -99,6 +110,5 @@ public class Course {
         s.put("D", studentD);
         
         return s;
-        
     }
 }
