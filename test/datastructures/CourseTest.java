@@ -137,7 +137,6 @@ public class CourseTest {
         String expResult = "{ \"name\" : \"sim\", \"id\" : \"101\" , \"gender\" : \"male\", \"grade\" : \"12.0\"}";
         String result = instance.toString();
         assertEquals(expResult, result);
-       
     }
 
     /**
@@ -155,7 +154,6 @@ public class CourseTest {
         Set<String> expResult = st;
         Set<String> result = instance.getAllByGender(" ");
         assertEquals(expResult, result);
-        
     }
 
     /**
@@ -206,8 +204,7 @@ public class CourseTest {
         Map<String, Set<String>> expResult = m;
         Map<String, Set<String>> result = instance.getGradeMap();
         assertEquals(expResult, result);
-    }
-    
+    } 
     
     
 }

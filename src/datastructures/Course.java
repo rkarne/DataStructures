@@ -65,21 +65,7 @@ public class Course {
         return students.toString();
          }
     
-    public Set<String> getAllByGender(String gender){
-        
-        Set<String> studentF = new HashSet<>();
-        Set<String> studentM = new HashSet<>();
-        if(gender == "female" || gender == "Female" || gender == "FEMALE"){
-            studentF.add(student.getGender());
-            return studentF;
-        }
-        else{
-            studentM.add(student.getGender());
-            return studentM;
-        }
-      
-        
-    }
+ 
     
     public Map<String,Set<String>> getGradeMap(){
         
@@ -111,4 +97,48 @@ public class Course {
         
         return s;
     }
+    
+    public void insert(Student s, int position){
+        Set<String> str = new HashSet<>();
+        for(int i=0; i< str.size();i++){
+            str.add(s.getName());
+        }
+    }
+    
+    public Student get(String id){
+        Student s = new Student();
+        Set<String> str = new HashSet<>();
+        for(int i=0; i<str.size(); i++){
+            str.add(s.getId());
+        }
+        return s;
+    }
+    
+    public Student get(int position){
+        
+        if(student.getId().equals(students.get(position))){
+            return student;
+        }
+        else{
+            return student;
+        }
+        
+    }
+    
+       public Set<String> getAllByGender(String gender){
+        
+        Set<String> studentF = new HashSet<>();
+        Set<String> studentM = new HashSet<>();
+        if(gender == "female" || gender == "Female" || gender == "FEMALE"){
+            studentF.add(student.getGender());
+            return studentF;
+        }
+        else{
+            studentM.add(student.getGender());
+            return studentM;
+        }
+      
+        
+    }
+    
 }
