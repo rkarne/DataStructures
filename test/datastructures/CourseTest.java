@@ -146,12 +146,14 @@ public class CourseTest {
     @Test
     public void testGetAllByGender() {
         System.out.println("getAllByGender");
+        Student s = new Student();
         List<Student> ls = new ArrayList<>();
-        
+        ls.add(s);
         Course instance = new Course(ls);
-        Set <String> s = new HashSet<>();
-        Set<String> expResult = s;
-        Set<String> result = instance.getAllByGender("male");
+        Set <String> st = new HashSet<>();
+        st.add("");
+        Set<String> expResult = st;
+        Set<String> result = instance.getAllByGender(" ");
         assertEquals(expResult, result);
         
     }
@@ -186,5 +188,26 @@ public class CourseTest {
         List<Student> result = instance.getAll();
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testReturnMap() {
+        System.out.println("getAll");
+        Student s = new Student("", "","", 0.0);
+        List<Student> student = new ArrayList<>();
+        Course instance = new Course(student);
+        Course cs = new Course(student); 
+        Set<String> set = new HashSet<>();
+        set.add(s.getName());
+        Map<String, Set<String>> m = new HashMap<>();
+        m.put("A", set);
+        m.put("B", set);
+        m.put("C", set);
+        m.put("D", set);
+        Map<String, Set<String>> expResult = m;
+        Map<String, Set<String>> result = instance.getGradeMap();
+        assertEquals(expResult, result);
+    }
+    
+    
     
 }
